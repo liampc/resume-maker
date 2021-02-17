@@ -6,7 +6,7 @@ function Input(props){
 
     return(
         <div className="input">
-            <label for={props.name} className="input__label">
+            <label className="input__label">
                 {props.name}: 
             </label>
             <input 

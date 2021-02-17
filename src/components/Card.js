@@ -5,7 +5,7 @@ import Input from './Input'
 function Card(props){
 
     let inputs = props.inputs.map(item => {
-        return <Input name={item.name} type={item.type} />
+        return <Input name={item.name} type={item.type} key={item.name} />
     })
 
     return (

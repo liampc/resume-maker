@@ -10,14 +10,19 @@ function Header(){
     'Work Experience', 'Skills', 'Certifications']
 
     const displayLinks = links.map(item => {
-        return <Link link={item} />
+        return <Link link={item} key={item} />
     })
 
+
+    function handleClick(){
+        console.log('hello')
+    }
     
 
     return(
         <header className="header container">
-            <div className="header__toggle hide-for-desktop">
+            <div className="header__toggle hide-for-desktop"
+                onClick={handleClick} >
                 <span></span>
                 <span></span>
                 <span></span>
