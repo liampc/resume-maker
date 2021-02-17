@@ -15,7 +15,16 @@ function Header(){
 
 
     function handleClick(){
-        console.log('hello')
+        
+        let elems = document.querySelectorAll('.toToggle')
+
+        elems.forEach(el => {
+            if (el.classList.contains('open')){
+                el.classList.remove('open')
+            } else {
+                el.classList.add('open')
+            }
+        })
     }
     
 
@@ -36,7 +45,7 @@ function Header(){
             <div className="hide-for-mobile">
                 <Button text={"SAVE"} />
             </div>
-            <div className="header__overlay">
+            <div className="header__overlay toToggle">
                 {displayLinks}
             </div>
             

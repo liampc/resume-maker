@@ -49,7 +49,9 @@
 
 
     &__overlay {
+        display: none;
 
+        &.open {
         position: fixed;
         background-color: $Blue;
         left: 0;
@@ -62,6 +64,9 @@
         text-align: center;
         display: flex;
         flex-direction: column;
+      
+        }
+        
     }
 
 
