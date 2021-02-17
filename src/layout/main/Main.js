@@ -10,7 +10,9 @@ function Section(props){
         <main className="main">
             <section className="main__card">
                 <h2>Basic Info</h2>
-                <Input name={"name"} type={"text"} />
+                <Input name={"Name"} type={"text"} />
+                <Input name={"Email"} type={"email"} />
+                <Input name={"Number"} type={"number"} />
             </section>
         </main>
     )

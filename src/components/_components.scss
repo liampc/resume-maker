@@ -30,3 +30,21 @@
         color: $GoldBrown;
     }
 }
+
+
+
+
+.input {
+
+    border-bottom: 1px solid $Brown;
+    margin-bottom: 1.5rem;
+
+    &__box {
+        width: 80%;
+        font-size: 1rem;
+        padding: 0.5rem;
+        border: none;
+        margin-left: 1rem;
+    }
+
+}
