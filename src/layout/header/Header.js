@@ -6,6 +6,15 @@ import Button from '../../components/Button'
 
 function Header(){
 
+    const links = ['Basic Info', 'Education', 
+    'Work Experience', 'Skills', 'Certifications']
+
+    const displayLinks = links.map(item => {
+        return <Link link={item} />
+    })
+
+    
+
     return(
         <header className="header container">
             <div className="header__toggle hide-for-desktop">
@@ -17,11 +26,7 @@ function Header(){
                 Resume Maker
             </h1>
             <nav className="header__nav hide-for-mobile">
-                <Link link={"Basic Info"}/>
-                <Link link={"Education"}/>
-                <Link link={"Work Experience"}/>
-                <Link link={"Skills"}/>
-                <Link link={"Certifications"}/>
+                {displayLinks}
             </nav>
             <div className="hide-for-mobile">
                 <Button text={"SAVE"} />
