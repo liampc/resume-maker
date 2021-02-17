@@ -42,30 +42,54 @@
 
     &__box {
         flex: 1;
-        font-size: 1rem;
-        padding: 0.5rem;
         border: none;
-        margin-left: 1rem;
+        font-size: 1rem;
+        margin-left: 0.5rem;
+        padding: 5px;
+
+
+        @include breakpoint-up('large'){
+            padding: 0.5rem;
+            margin-left: 1rem;
+        }
+
     }
 
 }
 
 
 .card {
+
+    
     background-color: white;
-    min-width: 40rem;
-    padding: 1.875rem 5rem;
+    border-radius: 5px;
     margin-bottom: 1.875rem;
-    border-radius: 20px;
+    padding: 0.875rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
+
     h2 {
         text-align: center;
-        margin-bottom: 2rem;
         border-bottom: 1px solid $Brown;
         width: 50%;
+        margin-bottom: 1rem;
         align-self: center;
     }
+
+
+    @include breakpoint-up('large'){
+        border-radius: 20px;
+        padding: 1.875rem 5rem;
+        max-width: 40rem;
+
+
+        h2 {
+            margin-bottom: 2rem;
+
+        }
+    }
+
+
 }

@@ -3,12 +3,19 @@
 
 
 .main {
-    margin-left: 20vw;
-    padding: 6.25rem 12.5rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+   
+    margin: 0 auto;
+    padding: 5rem 0.875rem;
+    
 
+    @include breakpoint-up('large'){
+        
+        margin-left: 20vw;
+        padding: 6.25rem 12.5rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 
 }
 
