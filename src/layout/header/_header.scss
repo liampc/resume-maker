@@ -5,14 +5,23 @@
 .header {
 
     background-color: $Blue;
-    min-height: 80vh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+   
 
-    &__name {
+    @include breakpoint-down('large'){
+        min-width: 100vw;
+        min-height: 15vh;
+    }
+    
+    @include breakpoint-up('large'){
+        min-width: 20vw;
+        min-height: 100vh;
+        
+    }
 
+    h1 {
         color: white;
-
     }
 }

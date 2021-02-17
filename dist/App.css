@@ -16,7 +16,7 @@ body {
   font-family: "Noto Sans HK", sans-serif;
   line-height: 1.5;
   background-color: #C2B092;
-  min-height: 100vh;
+  min-height: 200vh;
 }
 
 h1, h2 {
@@ -24,7 +24,6 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 6rem;
   font-weight: 300;
   text-align: left;
 }
