@@ -2,7 +2,7 @@ import React from 'react'
 
 import './_main.scss'
 import Card from  "../../components/Card"
-import Input from '../../components/Input'
+
 
 function Section(props){
 
@@ -13,7 +13,8 @@ function Section(props){
 
     const education = [
         {name: 'School', type: 'text'},
-        {name: 'Year', type: 'number'}
+        {name: 'Course', type: 'text'},
+        {name: 'School Year', type: 'number'},
     ]
 
 
