@@ -1,0 +1,16 @@
+@import '../abstracts/abstracts';
+
+
+
+.link {
+
+    color: white;
+    padding: 1rem;
+    font-weight: $font-med;
+    font-size: 0.875rem; //14px
+
+    &:hover {
+        color: $GoldBrown;
+    }
+    
+}

@@ -18,8 +18,8 @@
     @include breakpoint-up('large'){
         min-width: 20vw;
         min-height: 100vh;
-        flex-direction: column;
-        justify-content: flex-start;
+        display: grid;
+        grid-template-rows: 1fr 2fr 1fr;
         
     }
 
@@ -52,6 +52,18 @@
     h1 {
         color: white;
         text-align: center;
+    }
+
+    &__nav {
+        display: none;
+        
+        @include breakpoint-up('large'){
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+       
+
     }
 
 }

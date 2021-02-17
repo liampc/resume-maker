@@ -31,4 +31,8 @@ h1 {
 .container {
   padding: 0 1.875rem;
 }
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
 /*# sourceMappingURL=App.css.map */
