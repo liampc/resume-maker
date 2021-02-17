@@ -35,4 +35,16 @@ h1 {
 a, a:visited, a:active {
   text-decoration: none;
 }
+
+@media (max-width: 63.9375em) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
 /*# sourceMappingURL=App.css.map */

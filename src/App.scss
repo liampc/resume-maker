@@ -36,3 +36,17 @@ a, a:visited, a:active {
     text-decoration: none;
 }
 
+
+.hide-for-mobile {
+
+    @include breakpoint-down('medium'){
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+
+    @include breakpoint-up('large'){
+        display: none;
+    }
+}
