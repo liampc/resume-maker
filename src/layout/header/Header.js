@@ -18,9 +18,10 @@ function Header(){
             </h1>
             <nav className="header__nav hide-for-mobile">
                 <Link link={"Basic Info"}/>
-                <Link link={"Contact"}/>
                 <Link link={"Education"}/>
-                <Link link={"Experience"}/>
+                <Link link={"Work Experience"}/>
+                <Link link={"Skills"}/>
+                <Link link={"Certifications"}/>
             </nav>
             <div className="hide-for-mobile">
                 <Button text={"SAVE"} />

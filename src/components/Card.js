@@ -9,7 +9,7 @@ function Card(props){
     })
 
     return (
-        <section className="card" name={props.header}>
+        <section className="card" id={props.header}>
             <h2>{props.header}</h2>
             {inputs}
         </section>
