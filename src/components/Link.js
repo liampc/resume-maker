@@ -6,7 +6,7 @@ function Link(props){
 
 
     return (
-        <a className="link" href="#">
+        <a className="link" href={`#${props.link}`}>
             {props.link}
         </a>
     )

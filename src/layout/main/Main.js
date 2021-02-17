@@ -8,7 +8,8 @@ function Section(props){
 
     const basicInfo = [
         {name: 'Name', type: 'text' }, 
-        {name: 'Email', type: 'email'}
+        {name: 'Email', type: 'email'},
+        {name: 'Website', type: 'text'},
     ]
 
     const education = [
@@ -17,12 +18,28 @@ function Section(props){
         {name: 'School Year', type: 'number'},
     ]
 
+    const experience = [
+        {name: 'Company', type: 'text'},
+        {name: 'Postion', type: 'text'},
+        {name: 'Start', type: 'date'},
+        {name: 'End', type: 'date'}
+    ]
 
+    const skills = [
+        {name: 'Skills', type: 'text'}
+    ]
+
+    const certifications = [
+        {name: 'Certifications', type:'text'}
+    ]
 
     return (
         <main className="main">
             <Card header={"Basic Info"} inputs={basicInfo} />
             <Card header={"Education"} inputs={education}/>
+            <Card header={"Work Experience"} inputs={experience}/>
+            <Card header={"Skills"} inputs={skills}/>
+            <Card header={"Certifications"} inputs={certifications}/>
         </main>
     )
 }
