@@ -1,0 +1,18 @@
+@import '../../abstracts/abstracts';
+
+
+
+.header {
+
+    background-color: $Blue;
+    min-height: 80vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    &__name {
+
+        color: white;
+
+    }
+}

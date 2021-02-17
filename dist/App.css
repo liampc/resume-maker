@@ -15,5 +15,21 @@ body {
   padding: 0;
   font-family: "Noto Sans HK", sans-serif;
   line-height: 1.5;
+  background-color: #C2B092;
+  min-height: 100vh;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: 300;
+  text-align: left;
+}
+
+.container {
+  padding: 0 1.875rem;
 }
 /*# sourceMappingURL=App.css.map */
