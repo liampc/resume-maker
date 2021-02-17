@@ -7,17 +7,9 @@
     padding: 6.25rem 12.5rem;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 
 
-    &__card {
-
-        background-color: white;
-        min-width: 40rem;
-        min-height: 40rem; //temp
-        padding: 1.875rem 5rem;
-
-
-    }
 }
 
 
