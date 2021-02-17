@@ -36,7 +36,9 @@ function Header(){
             <div className="hide-for-mobile">
                 <Button text={"SAVE"} />
             </div>
-            
+            <div className="header__overlay">
+                {displayLinks}
+            </div>
             
         </header>
         

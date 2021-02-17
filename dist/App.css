@@ -16,7 +16,6 @@ body {
   font-family: "Noto Sans HK", sans-serif;
   line-height: 1.5;
   background-color: #C2B092;
-  min-height: 200vh;
 }
 
 h1, h2 {
@@ -46,5 +45,9 @@ a, a:visited, a:active {
   .hide-for-desktop {
     display: none;
   }
+}
+
+.hide {
+  display: none;
 }
 /*# sourceMappingURL=App.css.map */
