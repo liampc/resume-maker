@@ -4,18 +4,15 @@
 
 .main {
    
-    margin: 0 auto;
-    padding: 6rem 0.875rem;
+    margin: 8rem 0.875rem;
     
-
     @include breakpoint-up('medium'){
-        padding: 8rem;
+        margin: 8rem 5rem;
     }
 
     @include breakpoint-up('large'){
         
-        margin-left: 20vw;
-        padding: 6.25rem 12.5rem;
+        margin-left: 35vw;
         display: flex;
         justify-content: center;
         flex-direction: column;
