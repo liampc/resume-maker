@@ -9,6 +9,8 @@ function Section(props){
     const basicInfo = [
         {name: 'Name', type: 'text' }, 
         {name: 'Email', type: 'email'},
+        {name: 'Phone', type: 'number'},
+        {name: 'Address', type: 'text'},
         {name: 'Website', type: 'text'},
     ]
 
@@ -26,7 +28,7 @@ function Section(props){
     ]
 
     const skills = [
-        {name: 'Skills', type: 'text'}
+        {name: 'Skill', type: 'text'}
     ]
 
     const certifications = [
