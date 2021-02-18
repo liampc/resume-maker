@@ -15,6 +15,7 @@ class Section extends Component {
 
             }
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(event){
@@ -24,6 +25,10 @@ class Section extends Component {
             [name] : value
         })
 
+    }
+
+    handleSubmit(){
+        
         console.log(this.state)
     }
     
@@ -73,7 +78,7 @@ class Section extends Component {
                         </div>
                     </div>
 
-                    <button>Save</button>
+                    <button onClick={this.handleSubmit}>Save</button>
                 </form>
             </main>
         )
