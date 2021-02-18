@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 import './_main.scss'
 import Card from  "../../components/Card"
+import Input from './Input'
 
 
 class Section extends Component {
@@ -39,43 +40,29 @@ class Section extends Component {
                 <form>
                     <div className="card">
                         <h2>Basic Info</h2>
-                        <div className="input">
-                            <label htmlFor="name"> Name:
-                                <input 
-                                    className="input__box"
-                                    name="Name" 
-                                    type="text"  
-                                    onChange={this.handleChange}
-                                    value={this.state.Name}
-                                />
-                            </label>
-                        </div>
-                        <div className="input">
-                            <label htmlFor="Email"> Email:
-                                <input 
-                                    className="input__box" 
-                                    name="Email" 
-                                    type="email" 
-                                    onChange={this.handleChange}
-                                    value={this.state.Email}
-                                />
-                            </label>
-                        </div>
+                        <Input 
+                            name="Name"
+                            type="text"
+                            handleChange={this.handleChange}
+                            value={this.state.Name}
+                        />
+                        <Input 
+                            name="Email"
+                            type="email"
+                            handleChange={this.handleChange}
+                            value={this.state.Email}
+                        />
                     </div>
                     
                     <div className="card">
                         <h2>Education</h2>
-                        <div className="input">
-                            <label htmlFor="School"> School:
-                                <input 
-                                    className="input__box" 
-                                    name="School" 
-                                    type="text" 
-                                    onChange={this.handleChange}
-                                    value={this.state.School}
-                                />
-                            </label>
-                        </div>
+                        <Input 
+                            name="School"
+                            type="text"
+                            handleChange={this.handleChange}
+                            value={this.state.School}
+                        />
+
                     </div>
 
                     <button onClick={this.handleSubmit}>Save</button>
