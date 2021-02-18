@@ -30,7 +30,7 @@ function Section(props){
     ]
 
     const certifications = [
-        {name: 'Certifications', type:'text'}
+        {name: 'Certificate', type:'text'}
     ]
 
     return (
