@@ -1,49 +1,83 @@
-import React from 'react'
+import React, {Component} from 'react'
 
 import './_main.scss'
 import Card from  "../../components/Card"
 
 
-function Section(props){
+class Section extends Component {
 
-    const basicInfo = [
-        {name: 'Name', type: 'text' }, 
-        {name: 'Email', type: 'email'},
-        {name: 'Phone', type: 'number'},
-        {name: 'Address', type: 'text'},
-        {name: 'Website', type: 'text'},
-    ]
+    constructor(){
+        super()
+            this.state = {
+                 Name: '',
+                 Email: '',
+                 School: ''
 
-    const education = [
-        {name: 'School', type: 'text'},
-        {name: 'Course', type: 'text'},
-        {name: 'School Year', type: 'number'},
-    ]
+            }
+        this.handleChange = this.handleChange.bind(this)
+    }
 
-    const experience = [
-        {name: 'Company', type: 'text'},
-        {name: 'Postion', type: 'text'},
-        {name: 'Start', type: 'date'},
-        {name: 'End', type: 'date'}
-    ]
+    handleChange(event){
+        const {name, value} = event.target
 
-    const skills = [
-        {name: 'Skill', type: 'text'}
-    ]
+        this.setState({
+            [name] : value
+        })
 
-    const certifications = [
-        {name: 'Certificate', type:'text'}
-    ]
+        console.log(this.state)
+    }
+    
 
-    return (
-        <main className="main">
-            <Card header={"Basic Info"} inputs={basicInfo} />
-            <Card header={"Education"} inputs={education}/>
-            <Card header={"Work Experience"} inputs={experience}/>
-            <Card header={"Skills"} inputs={skills}/>
-            <Card header={"Certifications"} inputs={certifications}/>
-        </main>
-    )
+    render(){
+        return (
+            <main className="main">
+                <form>
+                    <div className="card">
+                        <h2>Basic Info</h2>
+                        <div className="input">
+                            <label htmlFor="name"> Name:
+                                <input 
+                                    className="input__box"
+                                    name="Name" 
+                                    type="text"  
+                                    onChange={this.handleChange}
+                                    value={this.state.Name}
+                                />
+                            </label>
+                        </div>
+                        <div className="input">
+                            <label htmlFor="Email"> Email:
+                                <input 
+                                    className="input__box" 
+                                    name="Email" 
+                                    type="email" 
+                                    onChange={this.handleChange}
+                                    value={this.state.Email}
+                                />
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div className="card">
+                        <h2>Education</h2>
+                        <div className="input">
+                            <label htmlFor="School"> School:
+                                <input 
+                                    className="input__box" 
+                                    name="School" 
+                                    type="text" 
+                                    onChange={this.handleChange}
+                                    value={this.state.School}
+                                />
+                            </label>
+                        </div>
+                    </div>
+
+                    <button>Save</button>
+                </form>
+            </main>
+        )
+    }
 }
 
 export default Section
