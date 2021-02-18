@@ -4,7 +4,7 @@ import uniqid from 'uniqid'
 import './_main.scss'
 import Card from  "../../components/Card"
 import Input from './Input'
-
+import BasicInfo from './BasicInfo'
 
 class Section extends Component {
 
@@ -39,38 +39,22 @@ class Section extends Component {
         console.log(this.state)
     }
 
+    handleClick(event){
+        console.log(event.target.parentNode)
+    }
+
+    
 
     render(){
+
         return (
             <main className="main">
                 <form>
-                    <div className="card">
-                        <h2>Basic Info</h2>
-                        <Input 
-                            name="Name"
-                            type="text"
-                            handleChange={this.handleChange}
-                            value={this.state.Name}
-                        />
-                        <Input 
-                            name="Email"
-                            type="email"
-                            handleChange={this.handleChange}
-                            value={this.state.Email}
-                        />
-                        <Input 
-                            name="Phone"
-                            type="number"
-                            handleChange={this.handleChange}
-                            value={this.state.Phone}
-                        />
-                        <Input 
-                            name="Website"
-                            type="text"
-                            handleChange={this.handleChange}
-                            value={this.state.Website}
-                        />
-                    </div>
+                    <BasicInfo 
+                        handleChange={this.handleChange}
+                        value={this.state}
+                        handleClick={this.handleClick}
+                    />
                     
                     <div className="card">
                         <h2>Education</h2>
