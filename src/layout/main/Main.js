@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import uniqid from 'uniqid'
 
 import './_main.scss'
 import Card from  "../../components/Card"
@@ -12,7 +13,11 @@ class Section extends Component {
             this.state = {
                  Name: '',
                  Email: '',
-                 School: ''
+                 Phone: '',
+                 Website: '',
+                 School: '',
+                 Course: '',
+                 Year: '',
 
             }
         this.handleChange = this.handleChange.bind(this)
@@ -25,14 +30,15 @@ class Section extends Component {
         this.setState({
             [name] : value
         })
+       
 
     }
 
-    handleSubmit(){
-        
+    handleSubmit(event){
+        event.preventDefault()
         console.log(this.state)
     }
-    
+
 
     render(){
         return (
@@ -52,6 +58,18 @@ class Section extends Component {
                             handleChange={this.handleChange}
                             value={this.state.Email}
                         />
+                        <Input 
+                            name="Phone"
+                            type="number"
+                            handleChange={this.handleChange}
+                            value={this.state.Phone}
+                        />
+                        <Input 
+                            name="Website"
+                            type="text"
+                            handleChange={this.handleChange}
+                            value={this.state.Website}
+                        />
                     </div>
                     
                     <div className="card">
@@ -61,6 +79,18 @@ class Section extends Component {
                             type="text"
                             handleChange={this.handleChange}
                             value={this.state.School}
+                        />
+                        <Input 
+                            name="Course"
+                            type="text"
+                            handleChange={this.handleChange}
+                            value={this.state.Course}
+                        />
+                        <Input 
+                            name="Year"
+                            type="Date"
+                            handleChange={this.handleChange}
+                            value={this.state.Year}
                         />
 
                     </div>
