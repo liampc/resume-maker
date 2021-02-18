@@ -13,7 +13,13 @@ function Card(props){
     })
 
     function handleClick(){
-        setList(prevState => prevState.concat(props.inputs))
+        if (props.header == 'Basic Info'){
+            setList(prevState => prevState.concat([{name:'Other', type:'text'}]))
+        }
+        else {
+            setList(prevState => prevState.concat(props.inputs))
+        }
+       
     }
 
 
