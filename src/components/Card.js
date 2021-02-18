@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import uniqid from 'uniqid';
 
 import Input from './Input'
 
 function Card(props){
 
     let inputs = props.inputs.map(item => {
-        return <Input name={item.name} type={item.type} key={item.name} />
+        return <Input name={item.name} type={item.type} key={uniqid()} />
     })
 
     return (

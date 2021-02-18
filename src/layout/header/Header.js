@@ -1,8 +1,12 @@
 import React, { useState} from 'react';
-import './_header.scss';
+import uniqid from 'uniqid';
 
+
+import './_header.scss';
 import Link from '../../components/Link'
 import Button from '../../components/Button'
+
+
 
 function Header(){
 
@@ -10,7 +14,7 @@ function Header(){
     'Work Experience', 'Skills', 'Certifications']
 
     const displayLinks = links.map(item => {
-        return <Link link={item} key={item} />
+        return <Link link={item} key={uniqid()} />
     })
 
 
