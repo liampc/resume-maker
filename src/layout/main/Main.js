@@ -11,14 +11,7 @@ class Section extends Component {
     constructor(){
         super()
             this.state = {
-                 Name: '',
-                 Email: '',
-                 Phone: '',
-                 Website: '',
-                 School: '',
-                 Course: '',
-                 Year: '',
-
+              
             }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -62,19 +55,19 @@ class Section extends Component {
                             name="School"
                             type="text"
                             handleChange={this.handleChange}
-                            value={this.state.School}
+                            value={this.state.School || ''}
                         />
                         <Input 
                             name="Course"
                             type="text"
                             handleChange={this.handleChange}
-                            value={this.state.Course}
+                            value={this.state.Course || ''}
                         />
                         <Input 
                             name="Year"
                             type="Date"
                             handleChange={this.handleChange}
-                            value={this.state.Year}
+                            value={this.state.Year || ''}
                         />
 
                     </div>
