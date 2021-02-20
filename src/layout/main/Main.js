@@ -73,7 +73,7 @@ class Section extends Component {
                         handleClick={this.handleClick}
                     />
 
-                    <button onClick={this.handleSubmit}>Save</button>
+                    <button className="button" onClick={this.handleSubmit}>Save</button>
                 </form>
             </main>
         )

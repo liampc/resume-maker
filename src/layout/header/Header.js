@@ -46,9 +46,6 @@ function Header(){
             <nav className="header__nav hide-for-mobile">
                 {displayLinks}
             </nav>
-            <div className="hide-for-mobile">
-                <Button text={"SAVE"} />
-            </div>
             <div className="header__overlay toToggle">
                 {displayLinks}
             </div>
