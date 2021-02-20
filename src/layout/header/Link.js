@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './_components.scss'
+import '../../components/_components.scss'
 
 function Link(props){
 

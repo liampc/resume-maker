@@ -2,13 +2,11 @@ import React, {Component} from 'react'
 import uniqid from 'uniqid'
 
 import './_main.scss'
-import Card from  "../../components/Card"
-import Input from './Input'
 import BasicInfo from './BasicInfo'
 import Education from './Education'
 
 
-class Section extends Component {
+class Main extends Component {
 
     constructor(){
         super()
@@ -80,4 +78,4 @@ class Section extends Component {
     }
 }
 
-export default Section
+export default Main

@@ -3,8 +3,8 @@ import uniqid from 'uniqid';
 
 
 import './_header.scss';
-import Link from '../../components/Link'
-import Button from '../../components/Button'
+import Link from './Link'
+
 
 
 
