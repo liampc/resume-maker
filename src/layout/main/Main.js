@@ -13,20 +13,22 @@ class Section extends Component {
     constructor(){
         super()
             this.state = {
-              
+              Education: []
             }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleChange(event){
+    handleChange(event, header){
         const {name, value} = event.target
+        
 
-        this.setState({
-            [name] : value
-        })
+        this.setState(prevState => ({
+            // [header] : {[name] : value}
+            [header]: {...prevState[header], [name] : value}
+        }))
        
-
+        console.log(header ,this.state)
     }
 
     handleSubmit(event){
@@ -43,20 +45,22 @@ class Section extends Component {
 
     render(){
 
+
+
         return (
             <main className="main">
                 <form>
                     <BasicInfo
                         header={'Basic Info'} 
                         handleChange={this.handleChange}
-                        value={this.state}
+                        value={this.state.Education}
                         handleClick={this.handleClick}
                     />
                     
                     <Education 
                         header={'Education'}
                         handleChange={this.handleChange}
-                        value={this.state}
+                        value={this.state.Education}
                         handleClick={this.handleClick}
                     />
 

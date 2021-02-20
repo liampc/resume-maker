@@ -10,19 +10,19 @@ function Education (props){
             <Input 
                 name="School"
                 type="text"
-                handleChange={props.handleChange}
+                handleChange={(e) => props.handleChange(e, props.header)}
                 value={props.value.School || ''}
             />
             <Input 
                 name="Course"
                 type="text"
-                handleChange={props.handleChange}
+                handleChange={(e) => props.handleChange(e, props.header)}
                 value={props.value.Course || ''}
             />
             <Input 
                 name="Year"
                 type="Date"
-                handleChange={props.handleChange}
+                handleChange={(e) => props.handleChange(e, props.header)}
                 value={props.value.Year || ''}
             />
 
