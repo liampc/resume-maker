@@ -13,11 +13,13 @@ class Section extends Component {
     constructor(){
         super()
             this.state = {
+                AllEducation: [],
               Education: [],
               Basic: []
             }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     handleChange(event, header){
@@ -28,7 +30,7 @@ class Section extends Component {
             [header]: {...prevState[header], [name] : value}
         }))
        
-        console.log(header ,this.state)
+        
     }
 
     handleSubmit(event){
@@ -38,7 +40,14 @@ class Section extends Component {
 
     handleClick(header){
 
-        console.log(header)
+        if (header == 'Education'){
+            this.setState(prevState => ({
+                AllEducation : prevState.AllEducation.concat(this.state.Education),
+                Education: []
+            }))
+        }
+
+        console.log(this.state)
     }
 
     
