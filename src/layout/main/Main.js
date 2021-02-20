@@ -5,6 +5,8 @@ import './_main.scss'
 import Card from  "../../components/Card"
 import Input from './Input'
 import BasicInfo from './BasicInfo'
+import Education from './Education'
+
 
 class Section extends Component {
 
@@ -32,8 +34,9 @@ class Section extends Component {
         console.log(this.state)
     }
 
-    handleClick(event){
-        console.log(event.target.parentNode)
+    handleClick(header){
+
+        console.log(header)
     }
 
     
@@ -43,34 +46,19 @@ class Section extends Component {
         return (
             <main className="main">
                 <form>
-                    <BasicInfo 
+                    <BasicInfo
+                        header={'Basic Info'} 
                         handleChange={this.handleChange}
                         value={this.state}
                         handleClick={this.handleClick}
                     />
                     
-                    <div className="card">
-                        <h2>Education</h2>
-                        <Input 
-                            name="School"
-                            type="text"
-                            handleChange={this.handleChange}
-                            value={this.state.School || ''}
-                        />
-                        <Input 
-                            name="Course"
-                            type="text"
-                            handleChange={this.handleChange}
-                            value={this.state.Course || ''}
-                        />
-                        <Input 
-                            name="Year"
-                            type="Date"
-                            handleChange={this.handleChange}
-                            value={this.state.Year || ''}
-                        />
-
-                    </div>
+                    <Education 
+                        header={'Education'}
+                        handleChange={this.handleChange}
+                        value={this.state}
+                        handleClick={this.handleClick}
+                    />
 
                     <button onClick={this.handleSubmit}>Save</button>
                 </form>

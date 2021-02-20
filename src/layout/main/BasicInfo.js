@@ -7,7 +7,7 @@ function BasicInfo(props){
 
     return (
         <div className="card">
-            <h2>Basic Info</h2>
+            <h2>{props.header}</h2>
             <Input 
                 name="Name"
                 type="text"
@@ -32,7 +32,7 @@ function BasicInfo(props){
                 handleChange={props.handleChange}
                 value={props.value.Website || ''}
             />
-            <span onClick={props.handleClick}>+</span>
+            <span onClick={() => props.handleClick(props.header)}>+</span>
         </div>
     )
 }
