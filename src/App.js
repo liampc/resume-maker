@@ -1,7 +1,7 @@
 
 import './App.scss';
-import Header from './layout/header/Header'
-import Main from './layout/main/Main'
+import Header from './components/header/Header'
+import Main from './components/main/Main'
 
 function App() {
   return (
