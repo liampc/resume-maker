@@ -11,25 +11,25 @@ function BasicInfo(props){
             <Input 
                 name="Name"
                 type="text"
-                handleChange={props.handleChange}
+                handleChange={(e) => props.handleChange(e, 'Basic')}
                 value={props.value.Name || ''}
             />
             <Input 
                 name="Email"
                 type="email"
-                handleChange={props.handleChange}
+                handleChange={(e) => props.handleChange(e, 'Basic')}
                 value={props.value.Email  || ''}
             />
             <Input 
                 name="Phone"
                 type="number"
-                handleChange={props.handleChange}
+                handleChange={(e) => props.handleChange(e, 'Basic')}
                 value={props.value.Phone || ''}
             />
             <Input 
                 name="Website"
                 type="text"
-                handleChange={props.handleChange}
+                handleChange={(e) => props.handleChange(e, 'Basic')}
                 value={props.value.Website || ''}
             />
             <span onClick={() => props.handleClick(props.header)}>+</span>

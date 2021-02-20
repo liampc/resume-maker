@@ -13,7 +13,8 @@ class Section extends Component {
     constructor(){
         super()
             this.state = {
-              Education: []
+              Education: [],
+              Basic: []
             }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -24,7 +25,6 @@ class Section extends Component {
         
 
         this.setState(prevState => ({
-            // [header] : {[name] : value}
             [header]: {...prevState[header], [name] : value}
         }))
        
@@ -53,7 +53,7 @@ class Section extends Component {
                     <BasicInfo
                         header={'Basic Info'} 
                         handleChange={this.handleChange}
-                        value={this.state.Education}
+                        value={this.state.Basic}
                         handleClick={this.handleClick}
                     />
                     
