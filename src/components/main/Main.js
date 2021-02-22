@@ -14,13 +14,15 @@ class Main extends Component {
             this.state = {
                 AllEducation: [],
               Education: [],
-              Basic: []
+              Basic: [],
+              isOpen: false
             }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleClick = this.handleClick.bind(this)
         this.handleEdit = this.handleEdit.bind(this)
         this.handleUpdate = this.handleUpdate.bind(this)
+        this.showEdit = this.showEdit.bind(this)
       
     }
 
@@ -38,7 +40,7 @@ class Main extends Component {
     handleSubmit(event){
         event.preventDefault()
         console.log(this.state)
-        
+
 
         let tohide = document.querySelectorAll('.to-hide')
         tohide.forEach(el => {
@@ -115,6 +117,21 @@ class Main extends Component {
         updates.classList.add('hide')
         
     }
+
+    showEdit(){
+    
+
+        let edits = document.querySelectorAll('.preview__edit')
+        edits.forEach(el => {
+           if (el.classList.contains('hide')){
+               el.classList.remove('hide')
+           } else {
+               el.classList.add('hide')
+           }
+        })
+
+       
+    }
     
 
     render(){
@@ -147,6 +164,8 @@ class Main extends Component {
                     data={this.state}
                     handleSubmit={this.handleSubmit}
                     handleEdit={this.handleEdit}
+                    showEdit={this.showEdit}
+                    isOpen={this.state.isOpen}
                 />
             </main>
         )

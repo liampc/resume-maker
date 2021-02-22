@@ -5,6 +5,7 @@ function Preview(props){
 
     let {Basic, Education, AllEducation} = props.data
 
+
     return (
         <div className="preview to-hide hide">
             <div className="preview__container container">
@@ -22,7 +23,7 @@ function Preview(props){
                     {AllEducation.map((item, index) => {
                         if (item.School || item.Course){
                             return <div key={uniqid()}>
-                            <span onClick={(e) => props.handleEdit(e, index, 'Education')} className="preview__edit">Edit</span>
+                            <span onClick={(e) => props.handleEdit(e, index, 'Education')} className="preview__edit hide">Edit</span>
                                 <p>{item.School}</p>
                                 <p>{item.Course}</p>
                                 <p>{item.Year}</p>
@@ -31,17 +32,11 @@ function Preview(props){
                         
                     })}
 
-                    {/* <p>{Education.School}</p>
-                    <p>{Education.Course}</p>
-                    <p>{Education.Year}</p> */}
                 </div>
             </div>
-           
-               
-        
 
-           
             <button className="button" value="edit" onClick={props.handleSubmit}>Back</button>
+            <button className="btn__edit button" value="edit" onClick={props.showEdit}>{props.isOpen ? 'Cancel' : 'Edit'}</button>
         </div>
     )
 }
