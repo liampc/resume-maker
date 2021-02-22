@@ -19,6 +19,7 @@ class Main extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleClick = this.handleClick.bind(this)
+        this.handleEdit = this.handleEdit.bind(this)
       
     }
 
@@ -63,6 +64,23 @@ class Main extends Component {
     }
 
 
+    handleEdit(event, index, section){
+
+        console.log(event.target, index, section)
+      
+
+        this.setState(prevState => {
+        
+            const updated = prevState[`All${section}`].map((obj, pos) => {
+                return pos == index ? this.state[section] : obj
+            })
+            return {
+                [section]: prevState[`All${section}`][index],
+                [`All${section}`]: updated
+            }
+        })
+
+    }
     
 
     render(){
@@ -87,7 +105,7 @@ class Main extends Component {
                     />
 
 
-                    <button className="button" onClick={this.handleSubmit}>Save</button>
+                    <button className="button" onClick={this.handleSubmit}>Preview</button>
                 </form>
 
                 <Preview

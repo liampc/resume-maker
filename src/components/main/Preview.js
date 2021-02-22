@@ -19,12 +19,16 @@ function Preview(props){
                 <h2>Education</h2>
                 <div className="preview__section">
 
-                    {AllEducation.map(item => {
-                        return <div key={uniqid()}>
-                            <p>{item.School}</p>
-                            <p>{item.Course}</p>
-                            <p>{item.Year}</p>
-                        </div>
+                    {AllEducation.map((item, index) => {
+                        if (item.School || item.Course){
+                            return <div key={uniqid()}>
+                            <span onClick={(e) => props.handleEdit(e, index, 'Education')} className="preview__edit">Edit</span>
+                                <p>{item.School}</p>
+                                <p>{item.Course}</p>
+                                <p>{item.Year}</p>
+                            </div>
+                        }
+                        
                     })}
 
                     {/* <p>{Education.School}</p>
