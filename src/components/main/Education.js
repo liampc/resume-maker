@@ -27,6 +27,7 @@ function Education (props){
             />
 
             <span onClick={() => props.handleClick(props.header)}>+</span>
+            <span onClick={() => props.handleUpdate(props.header)} className="update hide">Update</span>
         </div>
     )
 }

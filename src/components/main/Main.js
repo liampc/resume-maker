@@ -20,6 +20,7 @@ class Main extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleClick = this.handleClick.bind(this)
         this.handleEdit = this.handleEdit.bind(this)
+        this.handleUpdate = this.handleUpdate.bind(this)
       
     }
 
@@ -68,6 +69,8 @@ class Main extends Component {
 
         console.log(event.target, index, section)
       
+        let updates =  document.querySelector('.update')
+        updates.classList.remove('hide')
 
         this.setState(prevState => {
         
@@ -76,10 +79,28 @@ class Main extends Component {
             })
             return {
                 [section]: prevState[`All${section}`][index],
-                [`All${section}`]: updated
+                [`All${section}`]: updated,
+                updateIndex: index
+
             }
         })
 
+    }
+
+    handleUpdate(section){
+        
+        let index = this.state.updateIndex
+        console.log(this.state, section, index)
+
+        this.setState(prevState => {
+            const updated = prevState[`All${section}`].map((obj, pos) => {
+                return pos == index ? this.state[section] : obj
+            })
+            return {
+                [`All${section}`]: updated,
+                [section]: [],
+            }
+        })
     }
     
 
@@ -102,6 +123,7 @@ class Main extends Component {
                         handleChange={this.handleChange}
                         value={this.state.Education}
                         handleClick={this.handleClick}
+                        handleUpdate={this.handleUpdate}
                     />
 
 
