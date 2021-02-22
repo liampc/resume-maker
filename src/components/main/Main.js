@@ -38,6 +38,7 @@ class Main extends Component {
     handleSubmit(event){
         event.preventDefault()
         console.log(this.state)
+        
 
         let tohide = document.querySelectorAll('.to-hide')
         tohide.forEach(el => {
@@ -66,7 +67,12 @@ class Main extends Component {
     handleEdit(event, index, section){
 
         console.log(event.target, index, section)
-      
+        let card = document.querySelector(`.${section}`)
+        card.classList.remove('hide')
+        
+        let addBtn = document.querySelector('.add')
+        addBtn.classList.add('hide')
+
         let updates =  document.querySelector('.update')
         updates.classList.remove('hide')
 
@@ -99,6 +105,15 @@ class Main extends Component {
                 [section]: [],
             }
         })
+
+
+        let card = document.querySelector(`.${section}`)
+        card.classList.add('hide')
+
+
+        let updates =  document.querySelector('.update')
+        updates.classList.add('hide')
+        
     }
     
 
@@ -108,7 +123,7 @@ class Main extends Component {
 
         return (
             <main className="main">
-                <form className="to-hide">
+                <form >
                     <BasicInfo
                         header={'Basic Info'} 
                         handleChange={this.handleChange}
@@ -125,7 +140,7 @@ class Main extends Component {
                     />
 
 
-                    <button className="button" onClick={this.handleSubmit}>Preview</button>
+                    <button className="button to-hide" onClick={this.handleSubmit}>Preview</button>
                 </form>
 
                 <Preview

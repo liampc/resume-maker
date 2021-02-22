@@ -60,7 +60,11 @@
 
 .card {
 
+    &.hide {
+        display: none;
+    }
     
+
     background-color: white;
     border-radius: 5px;
     margin-bottom: 1.875rem;
@@ -68,6 +72,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 1;
 
 
     h2 {

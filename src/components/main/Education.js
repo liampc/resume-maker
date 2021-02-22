@@ -5,7 +5,7 @@ import Input from './Input'
 function Education (props){
 
     return (
-        <div className="card">
+        <div className="card Education to-hide">
             <h2>{props.header}</h2>
             <Input 
                 name="School"
@@ -26,7 +26,7 @@ function Education (props){
                 value={props.value.Year || ''}
             />
 
-            <span onClick={() => props.handleClick(props.header)}>+</span>
+            <span onClick={() => props.handleClick(props.header)} className="add to-hide">+</span>
             <span onClick={() => props.handleUpdate(props.header)} className="update hide">Update</span>
         </div>
     )
