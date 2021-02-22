@@ -52,14 +52,12 @@ class Main extends Component {
 
     }
 
-    handleClick(header){
+    handleClick(section){
 
-        if (header == 'Education'){
-            this.setState(prevState => ({
-                AllEducation : prevState.AllEducation.concat(this.state.Education),
-                Education: []
-            }))
-        }
+        this.setState(prevState => ({
+                [`All${section}`] : prevState[`All${section}`].concat(this.state[section]),
+                [section]: []
+        }))
 
         console.log(this.state)
     }
