@@ -1,8 +1,9 @@
 import React from 'react'
+import uniqid from 'uniqid'
 
 function Preview(props){
 
-    let {Basic} = props.data
+    let {Basic, Education, AllEducation} = props.data
 
     return (
         <div className="preview to-hide hide">
@@ -14,9 +15,29 @@ function Preview(props){
                     <p>{Basic.Phone}</p>
                     <p>{Basic.Website}</p>
                 </div>
+
+                <h2>Education</h2>
+                <div className="preview__section">
+
+                    {AllEducation.map(item => {
+                        return <div key={uniqid()}>
+                            <p>{item.School}</p>
+                            <p>{item.Course}</p>
+                            <p>{item.Year}</p>
+                        </div>
+                    })}
+
+                    {/* <p>{Education.School}</p>
+                    <p>{Education.Course}</p>
+                    <p>{Education.Year}</p> */}
+                </div>
             </div>
            
-            <button className="button" value="edit" onClick={props.handleSubmit}>Edit</button>
+               
+        
+
+           
+            <button className="button" value="edit" onClick={props.handleSubmit}>Back</button>
         </div>
     )
 }

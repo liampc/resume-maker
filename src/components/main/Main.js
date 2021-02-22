@@ -19,6 +19,7 @@ class Main extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleClick = this.handleClick.bind(this)
+      
     }
 
     handleChange(event, header){
@@ -61,6 +62,7 @@ class Main extends Component {
         console.log(this.state)
     }
 
+
     
 
     render(){
@@ -91,6 +93,7 @@ class Main extends Component {
                 <Preview
                     data={this.state}
                     handleSubmit={this.handleSubmit}
+                    handleEdit={this.handleEdit}
                 />
             </main>
         )
