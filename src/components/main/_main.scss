@@ -19,6 +19,32 @@
 
 }
 
+.preview {
+  
+
+    &__container {
+
+        background-color: white;
+        border-radius: 10px;
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
+    &__section {
+        border-top: 1px solid $Brown;
+
+        h3 {
+            color: $Brown;
+        }
+    }
+
+    &__edit {
+       float: right;
+    }
+}
 
 
 

@@ -4,6 +4,7 @@ import uniqid from 'uniqid'
 import './_main.scss'
 import BasicInfo from './BasicInfo'
 import Education from './Education'
+import Preview from './Preview'
 
 
 class Main extends Component {
@@ -34,6 +35,18 @@ class Main extends Component {
     handleSubmit(event){
         event.preventDefault()
         console.log(this.state)
+
+        let tohide = document.querySelectorAll('.to-hide')
+        tohide.forEach(el => {
+            if (el.classList.contains('hide')){
+                el.classList.remove('hide')
+            } else {
+                el.classList.add('hide')
+            }
+           
+        })
+        
+
     }
 
     handleClick(header){
@@ -56,7 +69,7 @@ class Main extends Component {
 
         return (
             <main className="main">
-                <form>
+                <form className="to-hide">
                     <BasicInfo
                         header={'Basic Info'} 
                         handleChange={this.handleChange}
@@ -71,8 +84,14 @@ class Main extends Component {
                         handleClick={this.handleClick}
                     />
 
+
                     <button className="button" onClick={this.handleSubmit}>Save</button>
                 </form>
+
+                <Preview
+                    data={this.state}
+                    handleSubmit={this.handleSubmit}
+                />
             </main>
         )
     }
