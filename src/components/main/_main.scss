@@ -21,44 +21,87 @@
 
 .preview {
   
+    
 
     &__container {
 
         background-color: white;
         border-radius: 10px;
         min-height: 50vh;
+        
         display: flex;
         flex-direction: column;
         margin-bottom: 2rem;
 
         @include breakpoint-up('large'){
             max-width: 50vw;
+            padding: 1.5rem 1rem;
         }
     }
 
-
+    h2 {
+        text-align: center;
+        border-bottom: 1px solid $GoldBrown;
+    }
 
     &__section {
-        border-top: 1px solid $Brown;
 
         h3 {
             color: $Brown;
         }
+
+        hr {
+            border-top: 1px solid $GoldBrown;
+       }
+    
+       p {
+            margin: 0;
+        }
+
+       &.contact-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
+    
+    hr {
+        border-top: 1px solid $GoldBrown;
+   }
+
+
+    &__card {
+
+        padding-top: 1rem;  
+
+        p:first-of-type {
+            font-size: larger;
+        }
+    }
+
+
     &__update {
+
        float: right;
+       cursor: pointer;
+       color: $Brown;
+
+       &:hover {
+           color: $GoldBrown;
+       }
     }
     
     span:nth-of-type(2) {
         padding-right: 10px;
+
     }
+
 
     &__buttons {
         display: flex;
         flex-direction: row;
        
-
         button:not(:last-of-type) {
             margin-right: 1rem;
         }

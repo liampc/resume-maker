@@ -10,21 +10,26 @@ function Preview(props){
         <div className="preview to-hide hide">
             <div className="preview__container container">
                 <h2>{Contact.Name}</h2>
-                <div className="preview__section">
-                    <h3>Contact</h3>
-                    <p>{Contact.Address}</p>
-                    <p>{Contact.Email}</p>
-                    <p>{Contact.Phone}</p>
-                    <p>{Contact.Website}</p>
-                    <p>{Contact.LinkedIn}</p>
-                    <p>{Contact.Other}</p>
+                <div className="preview__section contact-section">
+                    <div>
+                        <p>{Contact.Address}</p>
+                        <p>{Contact.Email}</p>
+                        <p>{Contact.Phone}</p>
+                    </div>
+                    <div>
+                        <p>{Contact.Website}</p>
+                        <p>{Contact.LinkedIn}</p>
+                        <p>{Contact.Other}</p>
+                    </div>
                 </div>
+                {Contact.length == 0 ? '' : <hr></hr>}
+                
 
                 <div className="preview__section">
-                    <h3>Education</h3>
+                    <h3>{Education.length == 0 && AllEducation.length == 0 ? '' : 'Education'}</h3>
                     {AllEducation.map((item, index) => {
                         if (item.School || item.Course){
-                            return <div key={uniqid()}>
+                            return <div key={uniqid()} className="preview__card">
                                 <span 
                                     onClick={(e) => props.handleDelete(e, index, 'Education')} 
                                     className="preview__update hide"> Delete 
@@ -39,6 +44,7 @@ function Preview(props){
                             </div>
                         }
                     })}
+                    {Education.length == 0 && AllEducation.length == 0 ? '' : <hr></hr>}
                 </div>
 
             </div>

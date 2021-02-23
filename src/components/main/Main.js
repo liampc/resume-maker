@@ -53,6 +53,7 @@ class Main extends Component {
     //Show the preview of the resume
     handleSubmit(event){
         event.preventDefault()
+        console.log(this.state)
        
         let tohide = document.querySelectorAll('.to-hide')
         tohide.forEach(el => {

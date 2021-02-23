@@ -21,7 +21,7 @@ function Education (props){
             />
             <Input 
                 name="Year"
-                type="Date"
+                type="text"
                 handleChange={(e) => props.handleChange(e, props.header)}
                 value={props.value.Year || ''}
             />
