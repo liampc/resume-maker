@@ -29,8 +29,13 @@
         min-height: 50vh;
         display: flex;
         flex-direction: column;
+        margin-bottom: 2rem;
 
+        @include breakpoint-up('large'){
+            max-width: 50vw;
+        }
     }
+
 
 
     &__section {
@@ -48,7 +53,19 @@
     span:nth-of-type(2) {
         padding-right: 10px;
     }
+
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+       
+
+        button:not(:last-of-type) {
+            margin-right: 1rem;
+        }
+    }
 }
+
+
 
 
 

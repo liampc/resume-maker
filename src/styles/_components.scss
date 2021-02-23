@@ -19,12 +19,13 @@
 .button {
     background-color: $Blue;
     color: white;
-    border: 1px solid $GoldBrown;
-    border-radius: 1.25rem;
+    border: 3px solid $GoldBrown;
+    border-radius: 10px;
     height: 3.75rem;
     width: 12.5rem;
     font-size: $font-small;
     font-weight: $font-med;
+    
 
     &:hover {
         color: $GoldBrown;

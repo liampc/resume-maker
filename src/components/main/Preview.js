@@ -36,9 +36,11 @@ function Preview(props){
                 </div>
 
             </div>
-
-            <button className="button" value="edit" onClick={props.handleSubmit}>Back</button>
-            <button className="btn__edit button" value="edit" onClick={props.showEdit}>{props.isOpen ? 'Cancel' : 'Edit'}</button>
+            <div className="preview__buttons">
+                 <button className="button" value="edit" onClick={props.handleSubmit}>Back</button>
+                <button className="btn__edit button" value="edit" onClick={props.showEdit}>Edit</button>
+            </div>
+           
         </div>
     )
 }
