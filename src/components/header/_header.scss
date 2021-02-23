@@ -64,6 +64,10 @@
         text-align: center;
         display: flex;
         flex-direction: column;
+
+            @include breakpoint-up('large') {
+                display: none;
+            }
       
         }
         

@@ -25,8 +25,6 @@ function Preview(props){
                         <p>{Contact.Other}</p>
                     </div>
                 </div>
-                {Contact.length == 0 ? '' : <hr></hr>}
-                
 
                 <div className="preview__section">
                     <h3>{Education.length == 0 && AllEducation.length == 0 ? '' : 'Education'}</h3>
