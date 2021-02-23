@@ -23,6 +23,7 @@ class Main extends Component {
         this.handleEdit = this.handleEdit.bind(this)
         this.handleUpdate = this.handleUpdate.bind(this)
         this.showEdit = this.showEdit.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
       
     }
 
@@ -118,10 +119,26 @@ class Main extends Component {
         
     }
 
+
+    handleDelete(event, index, section){
+
+        this.setState(prevState => {
+            const updated = prevState[`All${section}`].filter((obj, pos) => {
+                return pos != index 
+            })
+            return {
+                [`All${section}`]: updated,
+                
+            }
+        })
+
+    }
+
+
     showEdit(){
     
 
-        let edits = document.querySelectorAll('.preview__edit')
+        let edits = document.querySelectorAll('.preview__update')
         edits.forEach(el => {
            if (el.classList.contains('hide')){
                el.classList.remove('hide')
@@ -154,6 +171,7 @@ class Main extends Component {
                         value={this.state.Education}
                         handleClick={this.handleClick}
                         handleUpdate={this.handleUpdate}
+                       
                     />
 
 
@@ -164,6 +182,7 @@ class Main extends Component {
                     data={this.state}
                     handleSubmit={this.handleSubmit}
                     handleEdit={this.handleEdit}
+                    handleDelete={this.handleDelete}
                     showEdit={this.showEdit}
                     isOpen={this.state.isOpen}
                 />

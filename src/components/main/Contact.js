@@ -6,7 +6,7 @@ function Contact(props){
 
 
     return (
-        <div id="Contact" className="card to-hide">
+        <div id="Contact" className="card Contact to-hide">
             <h2>{props.header}</h2>
             <Input 
                 name="Name"

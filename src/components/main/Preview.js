@@ -25,7 +25,8 @@ function Preview(props){
                     {AllEducation.map((item, index) => {
                         if (item.School || item.Course){
                             return <div key={uniqid()}>
-                            <span onClick={(e) => props.handleEdit(e, index, 'Education')} className="preview__edit hide">Edit</span>
+                                <span onClick={(e) => props.handleDelete(e, index, 'Education')} className="preview__update hide"> Delete </span>  
+                                <span onClick={(e) => props.handleEdit(e, index, 'Education')} className="preview__update hide"> Edit</span>
                                 <p>{item.School}</p>
                                 <p>{item.Course}</p>
                                 <p>{item.Year}</p>

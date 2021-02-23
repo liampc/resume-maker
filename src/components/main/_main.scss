@@ -41,8 +41,12 @@
         }
     }
 
-    &__edit {
+    &__update {
        float: right;
+    }
+    
+    span:nth-of-type(2) {
+        padding-right: 10px;
     }
 }
 
