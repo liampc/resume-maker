@@ -3,7 +3,10 @@ import uniqid from 'uniqid'
 
 function Preview(props){
 
-    let {Contact, Education, AllEducation, Experience, AllExperience, Skills, AllSkills, Certifications, AllCertifications} = props.data
+    let {Contact, Education, AllEducation, 
+        Experience, AllExperience, Skills, 
+        AllSkills, Certifications, 
+        AllCertifications} = props.value
 
 
     return (

@@ -2,13 +2,7 @@ import React, {Component} from 'react'
 import uniqid from 'uniqid'
 
 import './_main.scss'
-import Contact from './Contact'
-import Education from './Education'
-import Experience from './Experience'
-import Skills from './Skills'
-import Certifications from './Certifications'
-import Preview from './Preview'
-
+import Form from './Form'
 
 
 class Main extends Component {
@@ -170,64 +164,19 @@ class Main extends Component {
     }
     
 
-
     render(){
 
-        return (
-            <main className="main">
-                <form >
-                    <Contact
-                        header={'Contact'} 
-                        handleChange={this.handleChange}
-                        value={this.state.Contact}
-                        handleClick={this.handleClick}
-                    />
-                    
-                    <Education 
-                        header={'Education'}
-                        handleChange={this.handleChange}
-                        value={this.state.Education}
-                        handleClick={this.handleClick}
-                        handleUpdate={this.handleUpdate}
-                       
-                    />
-
-                    <Experience 
-                        header={'Experience'}
-                        handleChange={this.handleChange}
-                        value={this.state.Experience}
-                        handleClick={this.handleClick}
-                        handleUpdate={this.handleUpdate}
-                    />
-
-                    <Skills
-                        header={'Skills'}
-                        handleChange={this.handleChange}
-                        value={this.state.Skills}
-                        handleClick={this.handleClick}
-                        handleUpdate={this.handleUpdate}
-                    />
-
-                    <Certifications 
-                        header={'Certifications'}
-                        handleChange={this.handleChange}
-                        value={this.state.Certifications}
-                        handleClick={this.handleClick}
-                        handleUpdate={this.handleUpdate}
-                    />
-
-                    <button className="button to-hide" onClick={this.handleSubmit}>Preview</button>
-                </form>
-
-                <Preview
-                    data={this.state}
-                    handleSubmit={this.handleSubmit}
-                    handleEdit={this.handleEdit}
-                    handleDelete={this.handleDelete}
-                    showEdit={this.showEdit}
-                    isOpen={this.state.isOpen}
-                />
-            </main>
+        return(
+            <Form 
+                value={this.state}
+                handleChange={this.handleChange}
+                handleClick={this.handleClick}
+                handleUpdate={this.handleUpdate}
+                handleSubmit={this.handleSubmit}
+                handleEdit={this.handleEdit}
+                handleDelete={this.handleDelete}
+                showEdit={this.showEdit}
+            />
         )
     }
 }
