@@ -6,6 +6,7 @@ import Contact from './Contact'
 import Education from './Education'
 import Experience from './Experience'
 import Skills from './Skills'
+import Certifications from './Certifications'
 import Preview from './Preview'
 
 
@@ -21,8 +22,9 @@ class Main extends Component {
                 Experience: [],
                 AllExperience: [],
                 Skills: [],
-                AllSkills: []
-
+                AllSkills: [],
+                Certifications: [],
+                AllCertifications: []
             }
 
         this.handleChange = this.handleChange.bind(this)
@@ -206,6 +208,13 @@ class Main extends Component {
                         handleUpdate={this.handleUpdate}
                     />
 
+                    <Certifications 
+                        header={'Certifications'}
+                        handleChange={this.handleChange}
+                        value={this.state.Certifications}
+                        handleClick={this.handleClick}
+                        handleUpdate={this.handleUpdate}
+                    />
 
                     <button className="button to-hide" onClick={this.handleSubmit}>Preview</button>
                 </form>

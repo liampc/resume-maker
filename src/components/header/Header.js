@@ -11,7 +11,7 @@ import Link from './Link'
 function Header(){
 
     const links = ['Contact', 'Education', 
-    'Work Experience', 'Skills', 'Certifications']
+    'Experience', 'Skills', 'Certifications']
 
     const displayLinks = links.map(item => {
         return <Link link={item} key={uniqid()} />
