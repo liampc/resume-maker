@@ -30,6 +30,8 @@ function Preview(props){
 
                 <div className="preview__section">
                     <h3>{Education.length == 0 && AllEducation.length == 0 ? '' : 'Education'}</h3>
+                    {Education.length == 0 && AllEducation.length == 0 ? '' : <hr></hr>}
+
                     {AllEducation.map((item, index) => {
                         if (item.School || item.Course){
                             return <div key={uniqid()} className="preview__card">
@@ -47,11 +49,13 @@ function Preview(props){
                             </div>
                         }
                     })}
-                    {Education.length == 0 && AllEducation.length == 0 ? '' : <hr></hr>}
+                   
                 </div>
 
                 <div className="preview__section">
                     <h3>{Experience.length == 0 && AllExperience.length == 0 ? '' : 'Experience'}</h3>
+                    {Experience.length == 0 && AllExperience.length == 0 ? '' : <hr></hr>}
+
                     {AllExperience.map((item, index) => {
                         if (item.Company || item.Position){
                             return <div key={uniqid()} className="preview__card">
@@ -71,11 +75,13 @@ function Preview(props){
                             </div>
                         }
                     })}
-                     {Experience.length == 0 && AllExperience.length == 0 ? '' : <hr></hr>}
+                    
                 </div>
 
                 <div className="preview__section">
                     <h3>{Skills.length == 0 && AllSkills.length == 0 ? '' : 'Skills'}</h3>
+                    {Skills.length == 0 && AllSkills.length == 0 ? '' : <hr></hr>}
+
                     {AllSkills.map((item, index) => {
                         if (item.Skill){
                             return <div key={uniqid()} className="preview__card">
@@ -91,11 +97,13 @@ function Preview(props){
                             </div>
                         }
                     })}
-                    {Skills.length == 0 && AllSkills.length == 0 ? '' : <hr></hr>}
+                    
                 </div>
 
                 <div className="preview__section">
                     <h3>{Certifications.length == 0 && AllCertifications.length == 0 ? '' : 'Certifications'}</h3>
+                    {Certifications.length == 0 && AllCertifications.length == 0 ? '' : <hr></hr>}
+                    
                     {AllCertifications.map((item, index) => {
                         if (item.Certificate){
                             return <div key={uniqid()} className="preview__card">
@@ -111,7 +119,6 @@ function Preview(props){
                             </div>
                         }
                     })}
-                    {Certifications.length == 0 && AllCertifications.length == 0 ? '' : <hr></hr>}
                 </div>
 
 
