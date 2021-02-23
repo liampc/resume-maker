@@ -34,7 +34,7 @@ function Header(){
 
     return(
         <header className="header container">
-            <div className="header__toggle hide-for-desktop"
+            <div className="header__toggle hide-for-desktop toToggle"
                 onClick={handleClick} >
                 <span></span>
                 <span></span>
