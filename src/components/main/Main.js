@@ -5,6 +5,7 @@ import './_main.scss'
 import Contact from './Contact'
 import Education from './Education'
 import Experience from './Experience'
+import Skills from './Skills'
 import Preview from './Preview'
 
 
@@ -18,7 +19,9 @@ class Main extends Component {
                 Education: [],
                 AllEducation: [],
                 Experience: [],
-                AllExperience: []
+                AllExperience: [],
+                Skills: [],
+                AllSkills: []
 
             }
 
@@ -191,6 +194,14 @@ class Main extends Component {
                         header={'Experience'}
                         handleChange={this.handleChange}
                         value={this.state.Experience}
+                        handleClick={this.handleClick}
+                        handleUpdate={this.handleUpdate}
+                    />
+
+                    <Skills
+                        header={'Skills'}
+                        handleChange={this.handleChange}
+                        value={this.state.Skills}
                         handleClick={this.handleClick}
                         handleUpdate={this.handleUpdate}
                     />

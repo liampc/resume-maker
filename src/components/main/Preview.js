@@ -3,7 +3,7 @@ import uniqid from 'uniqid'
 
 function Preview(props){
 
-    let {Contact, Education, AllEducation, Experience, AllExperience} = props.data
+    let {Contact, Education, AllEducation, Experience, AllExperience, Skills, AllSkills} = props.data
 
 
     return (
@@ -71,7 +71,25 @@ function Preview(props){
                      {Experience.length == 0 && AllExperience.length == 0 ? '' : <hr></hr>}
                 </div>
 
-
+                <div className="preview__section">
+                    <h3>{Skills.length == 0 && AllSkills.length == 0 ? '' : 'Skills'}</h3>
+                    {AllSkills.map((item, index) => {
+                        if (item.Skill){
+                            return <div key={uniqid()} className="preview__card">
+                                <span 
+                                    onClick={(e) => props.handleDelete(e, index, 'Skills')} 
+                                    className="preview__update hide"> Delete 
+                                </span>  
+                                <span 
+                                    onClick={(e) => props.handleEdit(e, index, 'Skills')} 
+                                    className="preview__update hide"> Edit
+                                </span>
+                                <p>{item.Skill}</p>
+                            </div>
+                        }
+                    })}
+                    {Skills.length == 0 && AllSkills.length == 0 ? '' : <hr></hr>}
+                </div>
 
             </div>
             <div className="preview__buttons">
