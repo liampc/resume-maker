@@ -4,7 +4,9 @@ import uniqid from 'uniqid'
 import './_main.scss'
 import Contact from './Contact'
 import Education from './Education'
+import Experience from './Experience'
 import Preview from './Preview'
+
 
 
 class Main extends Component {
@@ -15,6 +17,8 @@ class Main extends Component {
                 Contact: [],
                 Education: [],
                 AllEducation: [],
+                Experience: [],
+                AllExperience: []
 
             }
 
@@ -177,6 +181,14 @@ class Main extends Component {
                         handleClick={this.handleClick}
                         handleUpdate={this.handleUpdate}
                        
+                    />
+
+                    <Experience 
+                        header={'Experience'}
+                        handleChange={this.handleChange}
+                        value={this.state.Experience}
+                        handleClick={this.handleClick}
+                        handleUpdate={this.handleUpdate}
                     />
 
 
