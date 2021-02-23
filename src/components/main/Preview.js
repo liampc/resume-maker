@@ -3,23 +3,25 @@ import uniqid from 'uniqid'
 
 function Preview(props){
 
-    let {Basic, Education, AllEducation} = props.data
+    let {Contact, Education, AllEducation} = props.data
 
 
     return (
         <div className="preview to-hide hide">
             <div className="preview__container container">
-                <h2>{Basic.Name}</h2>
+                <h2>{Contact.Name}</h2>
                 <div className="preview__section">
                     <h3>Contact</h3>
-                    <p>{Basic.Email}</p>
-                    <p>{Basic.Phone}</p>
-                    <p>{Basic.Website}</p>
+                    <p>{Contact.Address}</p>
+                    <p>{Contact.Email}</p>
+                    <p>{Contact.Phone}</p>
+                    <p>{Contact.Website}</p>
+                    <p>{Contact.LinkedIn}</p>
+                    <p>{Contact.Other}</p>
                 </div>
 
-                <h2>Education</h2>
                 <div className="preview__section">
-
+                    <h3>Education</h3>
                     {AllEducation.map((item, index) => {
                         if (item.School || item.Course){
                             return <div key={uniqid()}>
@@ -29,10 +31,9 @@ function Preview(props){
                                 <p>{item.Year}</p>
                             </div>
                         }
-                        
                     })}
-
                 </div>
+
             </div>
 
             <button className="button" value="edit" onClick={props.handleSubmit}>Back</button>

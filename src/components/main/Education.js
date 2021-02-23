@@ -5,7 +5,7 @@ import Input from './Input'
 function Education (props){
 
     return (
-        <div className="card Education to-hide">
+        <div id="Education" className="card to-hide">
             <h2>{props.header}</h2>
             <Input 
                 name="School"

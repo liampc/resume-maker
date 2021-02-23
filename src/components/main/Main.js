@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import uniqid from 'uniqid'
 
 import './_main.scss'
-import BasicInfo from './BasicInfo'
+import Contact from './Contact'
 import Education from './Education'
 import Preview from './Preview'
 
@@ -14,7 +14,7 @@ class Main extends Component {
             this.state = {
                 AllEducation: [],
               Education: [],
-              Basic: [],
+              Contact: [],
               isOpen: false
             }
         this.handleChange = this.handleChange.bind(this)
@@ -141,10 +141,10 @@ class Main extends Component {
         return (
             <main className="main">
                 <form >
-                    <BasicInfo
-                        header={'Basic Info'} 
+                    <Contact
+                        header={'Contact'} 
                         handleChange={this.handleChange}
-                        value={this.state.Basic}
+                        value={this.state.Contact}
                         handleClick={this.handleClick}
                     />
                     

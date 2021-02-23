@@ -10,7 +10,7 @@ import Link from './Link'
 
 function Header(){
 
-    const links = ['Basic Info', 'Education', 
+    const links = ['Contact', 'Education', 
     'Work Experience', 'Skills', 'Certifications']
 
     const displayLinks = links.map(item => {

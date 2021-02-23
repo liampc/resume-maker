@@ -5,7 +5,7 @@ function Input(props){
 
     return(
         <div className="input">
-            <label htmlFor={props.name}> {props.name}
+            <label htmlFor={props.name}> {props.name}: </label>
                 <input 
                     className="input__box"
                     name={props.name}
@@ -13,7 +13,6 @@ function Input(props){
                     onChange={props.handleChange}
                     value={props.value}
                 />
-            </label>
         </div>
     )
 }
