@@ -12,11 +12,12 @@ class Main extends Component {
     constructor(){
         super()
             this.state = {
+                Contact: [],
+                Education: [],
                 AllEducation: [],
-              Education: [],
-              Contact: [],
-              isOpen: false
+
             }
+
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleClick = this.handleClick.bind(this)
@@ -27,22 +28,32 @@ class Main extends Component {
       
     }
 
+    // Save the values of input
     handleChange(event, header){
         const {name, value} = event.target
         
-
         this.setState(prevState => ({
             [header]: {...prevState[header], [name] : value}
         }))
-       
         
     }
 
+
+     // Save mutiple data into a section
+     handleClick(section){
+
+        this.setState(prevState => ({
+                [`All${section}`] : prevState[`All${section}`].concat(this.state[section]),
+                [section]: []
+        }))
+
+    }
+
+
+    //Show the preview of the resume
     handleSubmit(event){
         event.preventDefault()
-        console.log(this.state)
-
-
+       
         let tohide = document.querySelectorAll('.to-hide')
         tohide.forEach(el => {
             if (el.classList.contains('hide')){
@@ -56,28 +67,20 @@ class Main extends Component {
 
     }
 
-    handleClick(section){
-
-        this.setState(prevState => ({
-                [`All${section}`] : prevState[`All${section}`].concat(this.state[section]),
-                [section]: []
-        }))
-
-        console.log(this.state)
-    }
-
-
+   
+    // Show the component to be edited in its section card
     handleEdit(event, index, section){
 
-        console.log(event.target, index, section)
-        let card = document.querySelector(`.${section}`)
-        card.classList.remove('hide')
-        
-        let addBtn = document.querySelector('.add')
-        addBtn.classList.add('hide')
 
+        //show / hide sections
+        let card = document.querySelector(`.${section}`)
+        let addBtn = document.querySelector('.add')
         let updates =  document.querySelector('.update')
+        
+        card.classList.remove('hide')
+        addBtn.classList.add('hide')
         updates.classList.remove('hide')
+
 
         this.setState(prevState => {
         
@@ -94,10 +97,11 @@ class Main extends Component {
 
     }
 
+
+    //Save the updated component 
     handleUpdate(section){
         
         let index = this.state.updateIndex
-        console.log(this.state, section, index)
 
         this.setState(prevState => {
             const updated = prevState[`All${section}`].map((obj, pos) => {
@@ -110,16 +114,18 @@ class Main extends Component {
         })
 
 
+        //Show / hide sections
+
         let card = document.querySelector(`.${section}`)
-        card.classList.add('hide')
-
-
         let updates =  document.querySelector('.update')
+
+        card.classList.add('hide')
         updates.classList.add('hide')
         
     }
 
 
+    //Delete the component from its section
     handleDelete(event, index, section){
 
         this.setState(prevState => {
@@ -135,9 +141,9 @@ class Main extends Component {
     }
 
 
+    //Show Edit buttons in sections with mutiple inputs
     showEdit(){
     
-
         let edits = document.querySelectorAll('.preview__update')
         edits.forEach(el => {
            if (el.classList.contains('hide')){
@@ -147,13 +153,11 @@ class Main extends Component {
            }
         })
 
-       
     }
     
 
+
     render(){
-
-
 
         return (
             <main className="main">
