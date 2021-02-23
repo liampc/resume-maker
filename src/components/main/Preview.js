@@ -68,6 +68,7 @@ function Preview(props){
                             </div>
                         }
                     })}
+                     {Experience.length == 0 && AllExperience.length == 0 ? '' : <hr></hr>}
                 </div>
 
 

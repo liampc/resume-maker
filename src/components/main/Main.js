@@ -80,11 +80,13 @@ class Main extends Component {
         //show / hide sections
         let card = document.querySelector(`.${section}`)
         let addBtn = document.querySelector('.add')
-        let updates =  document.querySelector('.update')
+        let updates =  document.querySelectorAll('.update')
         
         card.classList.remove('hide')
         addBtn.classList.add('hide')
-        updates.classList.remove('hide')
+        updates.forEach(item => {
+            item.classList.remove('hide')
+        })
 
 
         this.setState(prevState => {
@@ -122,10 +124,12 @@ class Main extends Component {
         //Show / hide sections
 
         let card = document.querySelector(`.${section}`)
-        let updates =  document.querySelector('.update')
+        let updates =  document.querySelectorAll('.update')
 
         card.classList.add('hide')
-        updates.classList.add('hide')
+        updates.forEach(item => {
+            item.classList.add('hide')
+        })
         
     }
 
