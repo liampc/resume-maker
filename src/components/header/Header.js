@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import uniqid from 'uniqid';
 
 
@@ -10,6 +10,8 @@ import Link from './Link'
 
 function Header(){
 
+    const [toggle, setToggle] = useState('')
+
     const links = ['Contact', 'Education', 
     'Experience', 'Skills', 'Certifications']
 
@@ -17,25 +19,30 @@ function Header(){
         return <Link link={item} key={uniqid()} />
     })
 
-
-    function handleClick(){
-        
-        let elems = document.querySelectorAll('.toToggle')
-
-        elems.forEach(el => {
-            if (el.classList.contains('open')){
-                el.classList.remove('open')
-            } else {
-                el.classList.add('open')
-            }
-        })
-    }
     
+    useEffect(() => {
+
+        const toggleDisplay = () => {
+            if (toggle === ''){
+                setToggle('open')
+            } else {
+                setToggle('')
+            }
+        }
+
+        document.querySelector('.header__toggle').addEventListener('click', toggleDisplay)
+
+        return () => {
+
+            document.querySelector('.header__toggle').removeEventListener('click', toggleDisplay)
+        }
+
+    }, [toggle])
+
 
     return(
         <header className="header container">
-            <div className="header__toggle hide-for-desktop toToggle"
-                onClick={handleClick} >
+            <div className={`header__toggle hide-for-desktop toToggle ${toggle}`}>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -46,7 +53,7 @@ function Header(){
             <nav className="header__nav hide-for-mobile">
                 {displayLinks}
             </nav>
-            <div className="header__overlay toToggle">
+            <div className={`header__overlay toToggle ${toggle}`}>
                 {displayLinks}
             </div>
             
